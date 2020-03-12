@@ -2,165 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="520c347e-25ca-4a89-a03f-1eee357ca278" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/006.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/008.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/009.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/011.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/012.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/014.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/016.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/017.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/019.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/020.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/021.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/022.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/023.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/025.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/026.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/027.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/028.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/029.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/030.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/031.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/032.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/033.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/035.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/036.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/037.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/038.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/039.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/040.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/041.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/008.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/009.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/011.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/012.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/014.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/006.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/008.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/009.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/011.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/012.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/014.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/015.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/016.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/006.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/008.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/009.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/010.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/011.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/012.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/013.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/014.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/016.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/017.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/018.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/019.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/020.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/021.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/022.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/023.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/024.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/025.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/026.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/028.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/029.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/030.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/031.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/032.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/033.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/034.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/035.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/036.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/037.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/038.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/039.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/040.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/041.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/042.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/043.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/044.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/045.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/046.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/047.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/048.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/049.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/050.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/051.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/052.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/053.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/054.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/055.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/056.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/057.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/058.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/059.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/061.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/062.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/063.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/064.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/068.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/069.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/070.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/071.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/072.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/073.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/074.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/075.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/076.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/005.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/006.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/007.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/001.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/002.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/003.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/004.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/image/PPT预览.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter1/StackStruTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClassInitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClinitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClinitTest2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/DeadThreadTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/HelloApp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/HelloLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Stu_JVM/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -184,7 +27,7 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="2" />
-          <entry key="java" value="17" />
+          <entry key="java" value="18" />
           <entry key="md" value="2" />
           <entry key="png" value="3" />
         </counts>
@@ -193,43 +36,46 @@
         <counts>
           <entry key="CLASS" value="2" />
           <entry key="Image" value="3" />
-          <entry key="JAVA" value="17" />
+          <entry key="JAVA" value="18" />
           <entry key="Markdown" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="2384" />
-          <entry key="md" value="3252" />
+          <entry key="java" value="2910" />
+          <entry key="md" value="3318" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="2384" />
-          <entry key="Markdown" value="3252" />
+          <entry key="JAVA" value="2910" />
+          <entry key="Markdown" value="3318" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="349">
-                <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+                <caret line="62" column="9" lean-forward="true" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+            <state relative-caret-position="247">
+              <caret line="22" column="61" lean-forward="true" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -266,6 +112,7 @@
         <option value="$PROJECT_DIR$/src/jvm/chapter2/DeadThreadTest.java" />
         <option value="$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest2.java" />
       </list>
     </option>
   </component>
@@ -275,7 +122,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="x" value="2" />
     <option name="y" value="1" />
     <option name="width" value="1918" />
@@ -326,7 +173,7 @@
     <property name="SearchEverywhereHistoryKey" value="System&#9;PSI&#9;JAVA://java.lang.System" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584002187497" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584003147230" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
@@ -348,9 +195,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClassLoaderTest">
-    <configuration name="ClassInitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClassInitTest" />
+  <component name="RunManager" selected="Application.ClassLoaderTest2">
+    <configuration name="ClassLoaderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClassLoaderTest" />
       <module name="Stu_JVM" />
       <extension name="coverage">
         <pattern>
@@ -362,8 +209,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassLoaderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClassLoaderTest" />
+    <configuration name="ClassLoaderTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClassLoaderTest2" />
       <module name="Stu_JVM" />
       <extension name="coverage">
         <pattern>
@@ -415,19 +262,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.ClassInitTest" />
       <item itemvalue="Application.ClinitTest" />
       <item itemvalue="Application.ClinitTest2" />
       <item itemvalue="Application.DeadThreadTest" />
       <item itemvalue="Application.ClassLoaderTest" />
+      <item itemvalue="Application.ClassLoaderTest2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClassLoaderTest2" />
         <item itemvalue="Application.ClassLoaderTest" />
         <item itemvalue="Application.DeadThreadTest" />
         <item itemvalue="Application.ClinitTest2" />
         <item itemvalue="Application.ClinitTest" />
-        <item itemvalue="Application.ClassInitTest" />
       </list>
     </recent_temporary>
   </component>
@@ -446,12 +293,12 @@
       <workItem from="1583406018528" duration="2800000" />
       <workItem from="1583428659098" duration="695000" />
       <workItem from="1583488572434" duration="2010000" />
-      <workItem from="1583983540282" duration="16133000" />
+      <workItem from="1583983540282" duration="17161000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24767000" />
+    <option name="totallyTimeSpent" value="25795000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -463,10 +310,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="2" y="1" width="1918" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26587728" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -475,7 +322,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36262515" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.37003404" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.32925472" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -615,9 +462,19 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="349">
-            <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+            <caret line="62" column="9" lean-forward="true" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="22" column="61" lean-forward="true" selection-start-line="22" selection-start-column="61" selection-end-line="22" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
