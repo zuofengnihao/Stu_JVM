@@ -1,95 +1,625 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="520c347e-25ca-4a89-a03f-1eee357ca278" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/023.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/025.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/027.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/028.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/030.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/031.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/032.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/033.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/035.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/036.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/037.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/038.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/039.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/040.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/02-类加载子系统/041.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/03-运行时数据区概述及线程/014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/015.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/04-程序计数器/016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/008.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/009.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/010.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/011.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/012.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/013.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/014.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/016.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/017.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/018.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/019.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/020.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/021.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/022.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/023.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/024.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/025.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/026.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/028.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/029.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/030.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/031.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/032.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/033.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/034.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/035.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/036.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/037.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/038.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/039.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/040.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/041.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/042.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/043.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/044.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/045.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/046.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/047.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/048.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/049.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/050.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/051.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/052.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/053.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/054.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/055.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/056.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/057.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/058.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/059.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/061.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/062.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/063.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/064.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/068.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/069.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/070.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/071.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/072.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/073.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/074.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/075.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/05-虚拟机栈/076.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/005.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/006.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/06-本地方法接口/007.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/001.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/002.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/003.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/07-本地方法栈/004.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/image/PPT预览.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter1/StackStruTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClassInitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClinitTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/ClinitTest2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/DeadThreadTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/HelloApp.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jvm/chapter2/HelloLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Stu_JVM/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1380042">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="5" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.opened" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="2" />
+          <entry key="java" value="17" />
+          <entry key="md" value="2" />
+          <entry key="png" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="2" />
+          <entry key="Image" value="3" />
+          <entry key="JAVA" value="17" />
+          <entry key="Markdown" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2384" />
+          <entry key="md" value="3252" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2384" />
+          <entry key="Markdown" value="3252" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Main.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="349">
+                <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="40" selection-start="106" selection-end="106" vertical-scroll-proportion="0.057757646">
-              <folding />
+            <state relative-caret-position="272">
+              <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>exit</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/jvm/chapter1/Entity.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter1/EntityInterface.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter1/Lesson1.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter1/StackStruTest.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/HelloLoader.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/HelloApp.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/ClassInitTest.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/ClinitTest.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/ClinitTest2.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/DeadThreadTest.java" />
+        <option value="$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="2" />
+    <option name="y" value="1" />
+    <option name="width" value="1918" />
+    <option name="height" value="1038" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
-      <flattenPackages />
-      <showMembers />
-      <showModules />
-      <showLibraryContents />
-      <hideEmptyPackages />
-      <abbreviatePackageNames />
-      <autoscrollToSource />
-      <autoscrollFromSource />
-      <sortByType />
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HelloWorld" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
+          <expand>
+            <path>
+              <item name="Stu_JVM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stu_JVM" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Stu_JVM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stu_JVM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Stu_JVM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stu_JVM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jvm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Stu_JVM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Stu_JVM" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="jvm" type="462c0819:PsiDirectoryNode" />
+              <item name="chapter2" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SearchEverywhereHistoryKey" value="System&#9;PSI&#9;JAVA://java.lang.System" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582096110690" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1584002187497" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\Stu_JVM\src\image" />
+      <recent name="D:\Project\Stu_JVM\image" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.ClassLoaderTest">
+    <configuration name="ClassInitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClassInitTest" />
       <module name="Stu_JVM" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvm.chapter2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClassLoaderTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClassLoaderTest" />
+      <module name="Stu_JVM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvm.chapter2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClinitTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClinitTest" />
+      <module name="Stu_JVM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvm.chapter2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClinitTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.ClinitTest2" />
+      <module name="Stu_JVM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvm.chapter2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeadThreadTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jvm.chapter2.DeadThreadTest" />
+      <module name="Stu_JVM" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jvm.chapter2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.ClassInitTest" />
+      <item itemvalue="Application.ClinitTest" />
+      <item itemvalue="Application.ClinitTest2" />
+      <item itemvalue="Application.DeadThreadTest" />
+      <item itemvalue="Application.ClassLoaderTest" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.ClassLoaderTest" />
+        <item itemvalue="Application.DeadThreadTest" />
+        <item itemvalue="Application.ClinitTest2" />
+        <item itemvalue="Application.ClinitTest" />
+        <item itemvalue="Application.ClassInitTest" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="520c347e-25ca-4a89-a03f-1eee357ca278" name="Default Changelist" comment="" />
+      <created>1582096072566</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582096072566</updated>
+      <workItem from="1582096075956" duration="981000" />
+      <workItem from="1583345636588" duration="2148000" />
+      <workItem from="1583406018528" duration="2800000" />
+      <workItem from="1583428659098" duration="695000" />
+      <workItem from="1583488572434" duration="2010000" />
+      <workItem from="1583983540282" duration="16133000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="24767000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.36262515" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.32925472" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3291714" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.49054506" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.3291714" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="10" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="12" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="13" />
+      <window_info anchor="right" id="jclasslib" weight="0.46268657" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" />
+      <window_info anchor="right" id="Database" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Theme Preview" order="8" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter1/Lesson1.java" />
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter1/EntityInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter1/Entity.java" />
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/lang/Runtime.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1360">
+          <caret line="108" column="20" selection-start-line="108" selection-start-column="20" selection-end-line="108" selection-end-column="20" />
+          <folding>
+            <element signature="e#1272#1273#0" expanded="true" />
+            <element signature="e#1309#1310#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/lang/Shutdown.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_221/src.zip!/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="970" column="32" selection-start-line="970" selection-start-column="32" selection-end-line="970" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/image/PPT预览.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/image/02-类加载子系统/003.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/image/02-类加载子系统/002.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter1/StackStruTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/Stu_JVM/jvm/chapter1/StackStruTest.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/HelloLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/HelloApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding>
+            <element signature="e#121#122#0" expanded="true" />
+            <element signature="e#157#158#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClassInitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClinitTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+          <folding>
+            <element signature="e#118#119#0" expanded="true" />
+            <element signature="e#143#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClinitTest2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/DeadThreadTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/jvm/chapter2/ClassLoaderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="32" lean-forward="true" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="349">
+            <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>
