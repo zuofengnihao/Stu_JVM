@@ -259,6 +259,8 @@ invokestatic指令和invokespecial指令调用的方法（invokevirtual被声明
 native修饰符可以与其他java修饰符链接，除abstract外。  
 为什么使用native method？详见005-007.png；  
 
-### 第七章 本地方栈
+## 第七章 本地方栈
 
 用于管理本地方法的调用。
+
+##
