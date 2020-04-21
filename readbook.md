@@ -364,8 +364,117 @@ Wilson于1994年在理论上证明了，当且仅当以下两个条件同时满�
 
 #### 3.5.1 Serial收集器
 
-曾经（在JDK 1.3.1之前）是HotSpot虚拟机新生代收集器的唯一选择，这个收集器是一个单线程工作的收集器。强调在它进行垃圾收集时，必须暂停其他所有工作线程，直到它收集结束。
+曾经（在JDK 1.3.1之前）是HotSpot虚拟机新生代收集器的唯一选择，这个收集器是一个单线程工作的收集器。强调在它进行垃圾收集时，必须暂停其他所有工作线程，直到它收集结束。  
+
+它是所有收集器里额外内存消耗（Memory Footprint）最小的。
 
 #### 3.5.2 ParNew收集器
 
+ParNew收集器实质上是Serial收集器的多线程并行版本，除了同时使用多条线程进行垃圾收集之外，其余的行为包括Serial收集器可用的所有控制参数（例如：`-XX：SurvivorRatio(设置eden占n/10 默认8)、-XX：PretenureSizeThreshold(设置超过n大小直接在old区分配 默认0 优先eden分配)、-XX：HandlePromotionFailure`等）、收集算法、Stop TheWorld、对象分配规则、回收策略等都与Serial收集器完全一致。  
 
+ParNew/Serial Old 收集器运行示意图:
+<div align="center"><img src="/image/readbook/6.jpg"/></div>
+
+#### 3.5.3 Parallel Scavenge收集器
+
+Parallel Scavenge收集器也是一款新生代收集器，它同样是基于标记-复制算法实现的收集器，也是能够并行收集的多线程收集器……Parallel Scavenge的诸多特性从表面上看和ParNew非常相似。
+
+Parallel Scavenge收集器的特点是它的关注点与其他收集器不同，CMS等收集器的关注点是尽可能地缩短垃圾收集时用户线程的停顿时间，而Parallel Scavenge收集器的目标则是达到一个可控制的吞吐量（Throughput）。`吞吐量 = 运行时代码时间/运行时代码时间 + 运行垃圾收集时间`  
+
+Parallel Scavenge收集器提供了两个参数用于精确控制吞吐量:
+1. 控制最大垃圾收集停顿时间的 `-XX：MaxGCPauseMillis`：  
+   允许的值是一个大于0的毫秒数，收集器将尽力保证内存回收花费的时间不超过用户设定值。垃圾收集停顿时间缩短是以牺牲吞吐量和新生代空间为代价换取的。
+2. 设置吞吐量大小的参数 `-XX：GCTimeRatio` ：  
+   参数的值则应当是一个大于0小于100的整数，也就是垃圾收集时间占总时间的比率，相当于吞吐量的倒数。(`N:1` N 即设置的值 如19 吞吐量 = 1/(19+1) 如99 吞吐量 = 1/(99+1) 默认值为99)  
+   
+Parallel Scavenge收集器还有一个参数-XX：+UseAdaptiveSizePolicy值得我们关注：`-XX：+UseAdaptiveSizePolicy`：  
+这是一个开关参数，当这个参数被激活之后，就不需要人工指定新生代的大小（-Xmn）、Eden与Survivor区的比例（-XX：SurvivorRatio）、晋升老年代对象大小（-XX：PretenureSizeThreshold）等细节参数了，虚拟机会根据当前系统的运行情况收集性能监控信息，动态调整这些参数以提供最合适的停顿时间或者最大的吞吐量。这种调节方式称为垃圾收集的自适应的调节策略（GC Ergonomics）。  
+只需要把基本的内存数据设置好（如-Xmx设置最大堆），然后使用-XX：MaxGCPauseMillis参数（更关注最大停顿时间）或-XX：GCTimeRatio（更关注吞吐量）参数给虚拟机设立一个优化目标。自适应调节策略也是Parallel Scavenge收集器区别于ParNew收集器的一个重要特性。
+
+#### 3.5.4 Serial Old收集器
+
+Serial Old是Serial收集器的老年代版本，它同样是一个单线程收集器，使用标记-整理算法。
+
+Serial/Serial Old 收集器运行示意图:
+<div align="center"><img src="/image/readbook/7.jpg"/></div>
+
+#### 3.5.5 Parallel Old收集器
+
+Parallel Old是Parallel Scavenge收集器的老年代版本，支持多线程并发收集，基于标记-整理算法实现。
+
+Parallel/Parallel Old 收集器运行示意图: 注*这是jdk1.8默认收集器组合!
+<div align="center"><img src="/image/readbook/8.jpg"/></div>
+
+#### 3.5.6 CMS收集器
+
+CMS（Concurrent Mark Sweep）收集器是一种以获取最短回收停顿时间为目标的收集器。是基于标记-清除算法实现的。
+
+它的运作过程相对于前面几种收集器来说要更复杂一些，整个过程分为四个步骤，包括：
+1. 初始标记（CMS initial mark）
+2. 并发标记（CMS concurrent mark）
+3. 重新标记（CMS remark）
+4. 并发清除（CMS concurrent sweep）  
+
+初始标记、重新标记这两个步骤仍然需要“Stop The World”。初始标记仅仅只是标记一下GC Roots能直接关联到的对象，速度很快；并发标记阶段就是从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，可以与垃圾收集线程一起并发运行；而重新标记阶段则是为了修正并发标记期间，因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录（详见3.4.6节中关于增量更新的讲解），这个阶段的停顿时间通常会比初始标记阶段稍长一些，但也远比并发标记阶段的时间短；最后是并发清除阶段，清理删除掉标记阶段判断的已经死亡的对象，由于不需要移动存活对象，所以这个阶段也是可以与用户线程同时并发的。  
+
+Concurrent Mark Sweep 收集器运行示意图:
+<div align="center"><img src="/image/readbook/9.jpg"/></div>
+
+#### 3.5.7 Garbage First收集器
+
+Garbage First（简称G1）收集器是面向局部收集的设计思路和基于Region的内存布局形式。  
+
+G1不再坚持固定大小以及固定数量的分代区域划分，而是把连续的Java堆划分为多个大小相等的独立区域（Region），每一个Region都可以根据需要，扮演新生代的Eden空间、Survivor空间，或者老年代空间。收集器能够对扮演不同角色的Region采用不同的策略去处理。  
+
+Region中还有一类特殊的Humongous区域，专门用来存储大对象。可以通过参数`-XX：G1HeapRegionSize`设定。G1的大多数行为都把Humongous Region作为老年代的一部分来进行看待。  
+
+G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小，根据用户设定允许的收集停顿时间（使用参数`-XX：MaxGCPauseMillis`指定，默认值是200毫秒），优先处理回收价值收益最大的那些Region。  
+
+G1收集器Region分区示意图：
+<div align="center"><img src="/image/readbook/10.jpg"/></div>
+
+解决跨Region引用：每个Region都维护有自己的记忆集，G1的记忆集在存储结构的本质上是一种哈希表，Key是别的Region的起始地址，Value是一个集合，里面存储的元素是卡表的索引号。通过原始快照（SATB）算法来实现收集线程与用户线程互不干扰。  
+
+的运作过程大致可划分为以下四个步骤：
+1. 初始标记（Initial Marking）：仅仅只是标记一下GC Roots能直接关联到的对象。这个阶段需要停顿线程。
+2. 并发标记（Concurrent Marking）：从GC Root开始对堆中对象进行可达性分析。
+3. 最终标记（Final Marking）：对用户线程做另一个短暂的暂停，用于处理并发阶段结束后仍遗留下来的最后那少量的SATB记录。
+4. 筛选回收（Live Data Counting and Evacuation）：根据用户所期望的停顿时间来制定回收计划。必须暂停用户线程，由多条收集器线程并行完成的。  
+
+G1收集器运行示意图：
+<div align="center"><img src="/image/readbook/11.jpg"/></div>
+
+`-XX：MaxGCPauseMillis`：允许的收集停顿时间，默认值是200毫秒。
+
+### 3.6 低延迟垃圾收集器
+
+衡量垃圾收集器的三项最重要的指标是：内存占用（Footprint）、吞吐量（Throughput）和延迟（Latency）  
+
+下图，中浅色阶段表示必须挂起用户线程，深色表示收集器线程与用户线程是并发工作的。
+
+<div align="center"><img src="/image/readbook/12.jpg"/></div>
+
+可见，在CMS和G1之前的全部收集器，其工作的所有步骤都会产生“Stop TheWorld”式的停顿；CMS和G1分别使用增量更新和原始快照（见3.4.6节）技术，实现了标记阶段的并发，不会因管理的堆内存变大，要标记的对象变多而导致停顿时间随之增长。但是对于标记阶段之后的处理，仍未得到妥善解决。CMS使用标记-清除算法，虽然避免了整理阶段收集器带来的停顿，但是清除算法不论如何优化改进，在设计原理上避免不了空间碎片的产生，随着空间碎片不断淤积最终依然逃不过“Stop The World”的命运。G1虽然可以按更小的粒度进行回收，从而抑制整理阶段出现时间过长的停顿，但毕竟也还是要暂停的。  
+最后的两款收集器，Shenandoah和ZGC，几乎整个工作过程全部都是并发的，只有初始标记、最终标记这些阶段有短暂的停顿，这部分停顿的时间基本上是固定的，与堆的容量、堆中对象的数量没有正比例关系。被官方命名为“低延迟垃圾收集器”（Low-Latency Garbage Collector或者Low-Pause-Time GarbageCollector）。
+
+#### 3.6.1 Shenandoah收集器
+
+Shenandoah是由RedHat公司独立发展的新型收集器项目。Shenandoah像是G1的下一代继承者。它们两者有着相似的堆内存布局，在初始标记、并发标记等许多阶段的处理思路上都高度一致，甚至还直接共享了一部分实现代码。  
+Shenandoah相较G1的改进，虽然Shenandoah也是使用基于Region的堆内存布局，同样有着用于存放大对象的Humongous Region，默认的回收策略也同样是优先处理回收价值最大的Region……但在管理堆内存方面，它与G1至少有三个明显的不同之处：
+1. 最重要的当然是支持并发的整理算法。
+2. Shenandoah（目前）是默认不使用分代收集的，换言之，不会有专门的新生代Region或者老年代Region的存在。
+3. Shenandoah摒弃了在G1中耗费大量内存和计算资源去维护的记忆集，改用名为“连接矩阵”（Connection Matrix）的全局数据结构来记录跨Region的引用关系。降低了处理跨代指针时的记忆集维护消耗，也降低了伪共享问题。
+
+Shenandoah收集器的工作过程大致可以划分为以下九个阶段：
+1. 初始标记（Initial Marking）：与G1一样，首先标记与GC Roots直接关联的对象，这个阶段仍是“Stop The World”的，但停顿时间与堆大小无关，只与GC Roots的数量相关。
+2. 并发标记（Concurrent Marking）：与G1一样，遍历对象图，标记出全部可达的对象，这个阶段是与用户线程一起并发的，时间长短取决于堆中存活对象的数量以及对象图的结构复杂程度。
+3. 最终标记（Final Marking）：与G1一样，处理剩余的SATB扫描，并在这个阶段统计出回收价值最高的Region，将这些Region构成一组回收集（Collection Set）。最终标记阶段也会有一小段短暂的停顿。
+4. 并发清理（Concurrent Cleanup）：这个阶段用于清理那些整个区域内连一个存活对象都没有找到的Region（这类Region被称为Immediate Garbage Region）。
+5. 并发回收（Concurrent Evacuation）：并发回收阶段是Shenandoah与之前HotSpot中其他收集器的核心差异。在这个阶段，Shenandoah要把回收集里面的存活对象先复制一份到其他未被使用的Region之中。并发回收阶段运行的时间长短取决于回收集的大小。
+6. 初始引用更新（Initial Update Reference）：并发回收阶段复制对象结束后，还需要把堆中所有指向旧对象的引用修正到复制后的新地址，这个操作称为引用更新。建立一个线程集合点，确保所有并发回收阶段中进行的收集器线程都已完成分配给它们的对象移动任务。
+7. 并发引用更新（Concurrent Update Reference）：真正开始进行引用更新操作，这个阶段是与用户线程一起并发的，时间长短取决于内存中涉及的引用数量的多少。
+8. 最终引用更新（Final Update Reference）：解决了堆中的引用更新后，还要修正存在于GCRoots中的引用。这个阶段是Shenandoah的最后一次停顿，停顿时间只与GC Roots的数量相关。
+9. 并发清理（Concurrent Cleanup）：经过并发回收和引用更新之后，整个回收集中所有的Region已再无存活对象，这些Region都变成Immediate Garbage Regions了，最后再调用一次并发清理过程来回收这些Region的内存空间，供以后新对象分配使用。  
+
+
+#### 3.6.2 ZGC收集器
