@@ -476,5 +476,114 @@ Shenandoah收集器的工作过程大致可以划分为以下九个阶段：
 8. 最终引用更新（Final Update Reference）：解决了堆中的引用更新后，还要修正存在于GCRoots中的引用。这个阶段是Shenandoah的最后一次停顿，停顿时间只与GC Roots的数量相关。
 9. 并发清理（Concurrent Cleanup）：经过并发回收和引用更新之后，整个回收集中所有的Region已再无存活对象，这些Region都变成Immediate Garbage Regions了，最后再调用一次并发清理过程来回收这些Region的内存空间，供以后新对象分配使用。  
 
+Shenandoah收集器的工作过程图
+<div align="center"><img src="/image/readbook/12.jpg"/></div>
+
+Shenandoah用以支持并行整理的核心概念——Brooks Pointer：转发指针  
+在原有对象布局结构的最前面统一增加一个新的引用字段，在正常不处于并发移动的情况下，该引用指向对象自己。与句柄定位有一些相似之处，柄通常会统一存储在专门的句柄池中，而转发指针是分散存放在每一个对象头前面。  
+
+转发指针与并发写入：（并发读取无论是新对象还是就对象都是一致的）
+通过比较并交换（Compare And Swap，CAS）操作来保证并发时对象的访问正确性的。
 
 #### 3.6.2 ZGC收集器
+
+ZGC内存布局：  
+与Shenandoah和G1一样，ZGC也采用基于Region的堆内存布局，但与它们不同的是，ZGC的Region。ZGC的Region具有动态性——动态创建和销毁，以及动态的区域容量大小。在x64硬件平台下，ZGC的Region可以具有大、中、小三类容量：
+1. 小型Region（Small Region）：容量固定为2MB，用于放置小于256KB的小对象。
+2. 中型Region（Medium Region）：容量固定为32MB，用于放置大于等于256KB但小于4MB的对象。
+3. 大型Region（Large Region）：容量不固定，可以动态变化，但必须为2MB的整数倍，用于放置4MB或以上的大对象。每个大型Region中只会存放一个大对象，这也预示着虽然名字叫作“大型Region”，但它的实际容量完全有可能小于中型Region，最小容量可低至4MB。大型Region在ZGC的实现中是不会被重分配的，因为复制一个大对象的代价非常高昂。
+
+并发整理算法的实现：TODO
+
+### 3.7 选择适合的垃圾收集器
+
+#### 3.7.1 Epsilon收集器
+
+#### 3.7.2 收集器的权衡
+
+一般来说，收集器的选择就从以上这几点出发来考虑：
+1. 应用程序的主要关注点是什么？如果是数据分析、科学计算类的任务，目标是能尽快算出结果，那吞吐量就是主要关注点；如果是SLA应用，那停顿时间直接影响服务质量，严重的甚至会导致事务超时，这样延迟就是主要关注点；而如果是客户端应用或者嵌入式应用，那垃圾收集的内存占用则是不可忽视的。  
+2. 运行应用的基础设施如何？譬如硬件规格，要涉及的系统架构是x86-32/64、SPARC还是ARM/Aarch64；处理器的数量多少，分配内存的大小；选择的操作系统是Linux、Solaris还是Windows等。  
+3. 使用JDK的发行商是什么？版本号是多少？是ZingJDK/Zulu、OracleJDK、Open-JDK、OpenJ9抑或是其他公司的发行版？该JDK对应了《Java虚拟机规范》的哪个版本？
+
+#### 3.7.3 虚拟机及垃圾收集器日志
+
+1. 查看GC基本信息，在JDK 9之前使用-XX：+PrintGC，JDK 9后使用-Xlog：gc：
+2. 查看GC详细信息，在JDK 9之前使用-XX：+PrintGCDetails，在JDK 9之后使用-X-log：gc*，用通配符*将GC标签下所有细分过程都打印出来，如果把日志级别调整到Debug或者Trace（基于版面篇幅考虑，例子中并没有），还将获得更多细节信息
+3. 查看GC前后的堆、方法区可用容量变化，在JDK 9之前使用-XX：+PrintHeapAtGC，JDK 9之后使用-Xlog：gc+heap=debug：
+4. 查看GC过程中用户线程并发时间以及停顿的时间，在JDK 9之前使用-XX：+Print-GCApplicationConcurrentTime以及-XX：+PrintGCApplicationStoppedTime，JDK 9之后使用-Xlog：safepoint：
+5. 查看收集器Ergonomics机制（自动设置堆空间各分代区域大小、收集目标等内容，从Parallel收集器开始支持）自动调节的相关信息。在JDK 9之前使用-XX：+PrintAdaptive-SizePolicy，JDK 9之后使用-Xlog：gc+ergo*=trace：
+6. 查看熬过收集后剩余对象的年龄分布信息，在JDK 9前使用-XX：+PrintTenuring-Distribution，JDK 9之后使用-Xlog：gc+age=trace：
+
+下图给出了全部在JDK 9中被废弃的日志相关参数及它们在JDK9后使用-Xlog的代替配置形式。
+<div align="center"><img src="/image/readbook/14.png"/></div>
+
+#### 3.7.4 垃圾收集器参数总结
+
+<div align="center"><img src="/image/readbook/15.png"/></div>
+
+### 3.8 实战：内存分配与回收策略
+
+#### 3.8.1 对象优先在Eden分配
+
+大多数情况下，对象在新生代Eden区中分配。当Eden区没有足够空间进行分配时，虚拟机将发起一次Minor GC。
+
+#### 3.8.2 大对象直接进入老年代
+
+大对象对虚拟机的内存分配来说就是一个不折不扣的坏消息，比遇到一个大对象更加坏的消息就是遇到一群“朝生夕灭”的“短命大对象”，我们写程序的时候应注意避免。  
+在Java虚拟机中要避免大对象的原因是，在分配空间时，它容易导致内存明明还有不少空间时就提前触发垃圾收集，以获取足够的连续空间才能安置好它们，而当复制对象时，大对象就意味着高额的内存复制开销。  
+HotSpot虚拟机提供了`-XX：PretenureSizeThreshold`参数，指定大于该设置值的对象直接在老年代分配。(只对Serial和ParNew两款新生代收集器有效)
+
+#### 3.8.3 长期存活的对象将进入老年代
+
+虚拟机给每个对象定义了一个对象年龄（Age）计数器，存储在对象头中。对象通常在Eden区里诞生，如果经过第一次Minor GC后仍然存活，并且能被Survivor容纳的话，该对象会被移动到Survivor空间中，并且将其对象年龄设为1岁。对象在Survivor区中每熬过一次Minor GC，年龄就增加1岁，当它的年龄增加到一定程度（默认为15，最大也为15，因为分代年龄只占1byte 4个bit位，最大值就是15），就会被晋升到老年代中。对象晋升老年代的年龄阈值，可以通过参数`-XX：MaxTenuringThreshold`设置。
+
+#### 3.8.4 动态对象年龄判断
+
+HotSpot虚拟机并不是永远要求对象的年龄必须达到-XX：MaxTenuringThreshold才能晋升老年代，如果在Survivor空间中相同年龄所有对象大小的总和大于Survivor空间的一半，年龄大于或等于该年龄的对象就可以直接进入老年代，无须等到-XX：MaxTenuringThreshold中要求的年龄。
+
+#### 3.8.5 空间分配担保
+
+在发生Minor GC之前，虚拟机必须先检查老年代最大可用的连续空间是否大于新生代所有对象总空间，如果这个条件成立，那这一次Minor GC可以确保是安全的。如果不成立，则虚拟机会先查看-XX：HandlePromotionFailure参数的设置值是否允许担保失败；如果允许，那会继续检查老年代最大可用的连续空间是否大于历次晋升到老年代对象的平均大小，如果大于，将尝试进行一次Minor GC，尽管这次Minor GC是有风险的；如果小于，或者-XX：HandlePromotionFailure设置不允许冒险，那这时就要改为进行一次FullGC。  
+实际虚拟机中已经不会再使用它。JDK 6 Update 24之后的规则变为只要老年代的连续空间大于新生代对象总大小或者历次晋升的平均大小，就会进行Minor GC，否则将进行Full GC。
+
+### 3.9 本章小结
+
+略....
+
+## 第4章 虚拟机性能监控、故障处理工具
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
