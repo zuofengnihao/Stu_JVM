@@ -1,4 +1,6 @@
-package jvm.readbook.c83;
+package jvm.readbook.c832;
+
+import java.util.Random;
 
 public class StaticDispatch {
 
@@ -26,5 +28,9 @@ public class StaticDispatch {
         StaticDispatch dispatch = new StaticDispatch();
         dispatch.sayHello(man);
         dispatch.sayHello(woman);
+
+        Human human = new Random().nextBoolean() ? new Man() : new Woman();
+        dispatch.sayHello((Man) human);
+        dispatch.sayHello((Woman) human);
     }
 }
