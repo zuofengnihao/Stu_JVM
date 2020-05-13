@@ -1268,4 +1268,78 @@ OpenJDK在2018年创建了Loom项目，这是Java用来应对本节开篇所列�
 #### 13.2.2 线程安全的实现方法
 
 1. 互斥同步：  
+   互斥是因，同步是果；互斥是方法，同步是目的。也叫阻塞同步（Blocking Synchronization）或互斥锁。  
    
+   synchronized关键字 -> monitorenter和monitorexit这两个字节码。
+   synchronized使用注意：
+   * 被synchronized修饰的同步块对同一条线程来说是可重入的。
+   * 被synchronized修饰的同步块在持有锁的线程执行完毕并释放锁之前，会无条件地阻塞后面其他线程的进入。  
+     
+   JUC包ReentrantLock重入锁相比synchronized的高级特性：
+   * 等待可中断：是指当持有锁的线程长期不释放锁的时候，正在等待的线程可以选择放弃等待，改为处理其他事情。
+   * 公平锁：是指多个线程在等待同一个锁时，必须按照申请锁的时间顺序来依次获得锁；不过一旦使用了公平锁，将会导致ReentrantLock的性能急剧下降，会明显影响吞吐量。（公平锁实现机制是AQS）
+   * 锁绑定多个条件：是指一个ReentrantLock对象可以同时绑定多个Condition对象。在synchronized中，锁对象的wait()跟它的notify()或者notifyAll()方法配合可以实现一个隐含的条件，如果要和多于一个的条件关联的时候，就不得不额外添加一个锁；而ReentrantLock则无须这样做，多次调用newCondition()方法即可。  
+
+2. 非阻塞同步：  
+   基于冲突检测的乐观并发策略（乐观锁），这种乐观并发策略的实现不再需要把线程阻塞挂起，因此这种同步操作被称为非阻塞同步（Non-Blocking Synchronization），使用这种措施的代码也常被称为无锁（Lock-Free）编程。  
+   
+   因为我们必须要求操作和冲突检测这两个步骤具备原子性，我们只能靠硬件来实现这件事情，硬件保证某些从语义上看起来需要多次操作的行为可以只通过一条处理器指令就能完成，这类指令常用的有：
+   * 测试并设置（Test-and-Set）；
+   * 获取并增加（Fetch-and-Increment）；
+   * 交换（Swap）；
+   * !*比较并交换（Compare-and-Swap，下文称CAS）；在IA64、x86指令集中有用cmpxchg指令完成的CAS功能
+   * 加载链接/条件储存（Load-Linked/Store-Conditional，下文称LL/SC）。  
+   
+   在JDK 5之后，Java类库中才开始使用CAS操作，该操作由sun.misc.Unsafe类里面的compareAndSwapInt()和compareAndSwapLong()等几个方法包装提供。  
+   CAS指令需要有三个操作数：内存位置、旧的预期值、准备设置的新值。  
+   
+   CAS操作的“ABA问题”，J.U.C包提供了一个带有标记的原子引用类AtomicStampedReference（用传统的互斥同步可能会比原子类更为高效），它可以通过控制变量值的版本来保证CAS的正确性。  
+   
+3. 无同步方案：  
+   * 可重入代码（Reentrant Code）：不依赖全局变量、存储在堆上的数据和公用的系统资源，用到的状态量都由参数中传入，不调用非可重入的方法等。
+   * 线程本地存储（Thread Local Storage）：可以通过java.lang.ThreadLocal类来实现线程本地存储的功能。  
+   
+### 13.3 锁优化
+
+适应性自旋（Adaptive Spinning）、锁消除（Lock Elimination）、锁膨胀（Lock Coarsening）、轻量级锁（Lightweight Locking）、偏向锁（Biased Locking）等
+
+#### 13.3.1 自旋锁与自适应自旋  
+
+挂起线程和恢复线程的操作都需要转入内核态中完成，这些操作给Java虚拟机的并发性能带来了很大的压力。共享数据的锁定状态只会持续很短的一段时间，为了这段时间去挂起和恢复线程并不值得。我们就可以让后面请求锁的那个线程“稍等一会”，但不放弃处理器的执行时间，看看持有锁的线程是否很快就会释放锁。为了让线程等待，我们只须让线程执行一个忙循环（自旋），这项技术就是所谓的自旋锁。  
+
+自旋次数的默认值是十次，用户也可以使用参数-XX：PreBlockSpin来自行更改。  
+
+自适应意味着自旋的时间不再是固定的了，而是由前一次在同一个锁上的自旋时间及锁的拥有者的状态来决定的。
+
+#### 13.3.2 锁消除
+
+锁消除是指虚拟机即时编译器在运行时，对一些代码要求同步，但是对被检测到不可能存在共享数据竞争的锁进行消除。锁消除的主要判定依据来源于逃逸分析的数据支持。
+
+案例：
+```java
+public String concatString(String s1, String s2, String s3) {
+    return s1 + s2 + s3;
+}
+```
+编译后:
+```java
+public String concatString(String s1, String s2, String s3) {
+    StringBuffer sb = new StringBuffer();
+    sb.append(s1);
+    sb.append(s2);
+    sb.append(s3);
+    return sb.toString();
+}
+```
+StringBuffer是线程安全的，但经过逃逸分析后会发现它的动态作用域被限制在concatString()方法内部。也就是sb的所有引用都永远不会逃逸到concatString()方法之外，其他线程无法访问到它，所以这里虽然有锁，但是可以被安全地消除掉。  
+
+#### 13.3.3 锁粗化
+
+如果一系列的连续操作都对同一个对象反复加锁和解锁，甚至加锁操作是出现在循环体之中的，那即使没有线程竞争，频繁地进行互斥同步操作也会导致不必要的性能损耗。  
+
+案例：接上案例，锁会粗化到第一个append()操作之前直至最后一个append()之后。
+
+#### 13.3.4 轻量级锁
+
+| 锁状态 |                mark world (64bit)               |  
+|       | 未使用:25 | 哈希值:31 | 未使用:1 | 分代年龄:4 | 偏向模式:1 | 
