@@ -133,10 +133,10 @@ HostSpot虚拟机要求对象起始地址必须是8字节的整数倍。换句�
 由栈上的reference类型访问对象。主流的访问方式主要有 “句柄” 和 “直接指针” 两种。  
 
 句柄访问：
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/1.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/1.png)
 
 直接指针：
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/2.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/2.png)
 
 优缺点：句柄访问在内存频繁移动时，不需要大量修改reference地址，只要修改句柄上的对象地址，但是访问速度慢。而指针访问速度快，但对象移动时，所有指向这个对象的reference地址都需要改动。Hotspot使用的是直接指针(如果使用的Shenandoah收集器的话也会有一次额外的转发)。
 
@@ -211,7 +211,7 @@ HostSpot虚拟机要求对象起始地址必须是8字节的整数倍。换句�
 #### 3.2.2 可达性分析法
 
 通过一系列称为“GC Roots”的根对象作为起始节点集，从这些节点开始，根据引用关系向下搜索，搜索过程所走过的路径称为“引用链”（Reference Chain），如果某个对象到GCRoots间没有任何引用链相连，或者用图论的话来说就是从GC Roots到这个对象不可达时，则证明此对象是不可能再被使用的。
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/3.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/3.jpg)
 
 GCRoots对象：
 1. 在虚拟机栈(本地变量表)中引用的对象
@@ -340,7 +340,7 @@ HotSpot虚拟机里是通过写屏障（Write Barrier）技术维护卡表状态
 2. 原本存活的对象错误标记为已消亡。非常致命。
 
 例图：
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/4.jpg)
+![image]https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/4.jpg)
 
 Wilson于1994年在理论上证明了，当且仅当以下两个条件同时满足时，会产生“对象消失”的问题(2问题)，即原本应该是黑色的对象被误标为白色：
 * 赋值器插入了一条或多条从黑色对象到白色对象的新引用。
@@ -357,7 +357,7 @@ Wilson于1994年在理论上证明了，当且仅当以下两个条件同时满�
 
 这里讨论的是在JDK 7Update 4之后（在这个版本中正式提供了商用的G1收集器，此前G1仍处于实验状态）、JDK11正式发布之前，OracleJDK中的HotSpot虚拟机所包含的全部可用的垃圾收集器。
 
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/5.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/5.jpg)
 
 上图展示了七种作用于不同分代的收集器，如果两个收集器之间存在连线，就说明它们可以搭配使用，图中收集器所处的区域，则表示它是属于新生代收集器抑或是老年代收集器。
 
@@ -373,7 +373,7 @@ Wilson于1994年在理论上证明了，当且仅当以下两个条件同时满�
 ParNew收集器实质上是Serial收集器的多线程并行版本，除了同时使用多条线程进行垃圾收集之外，其余的行为包括Serial收集器可用的所有控制参数（例如：`-XX：SurvivorRatio(设置eden占n/10 默认8)、-XX：PretenureSizeThreshold(设置超过n大小直接在old区分配 默认0 优先eden分配)、-XX：HandlePromotionFailure`等）、收集算法、Stop TheWorld、对象分配规则、回收策略等都与Serial收集器完全一致。  
 
 ParNew/Serial Old 收集器运行示意图:
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/6.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/6.jpg)
 
 #### 3.5.3 Parallel Scavenge收集器
 
@@ -396,14 +396,14 @@ Parallel Scavenge收集器还有一个参数-XX：+UseAdaptiveSizePolicy值得�
 Serial Old是Serial收集器的老年代版本，它同样是一个单线程收集器，使用标记-整理算法。
 
 Serial/Serial Old 收集器运行示意图:
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/7.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/7.jpg)
 
 #### 3.5.5 Parallel Old收集器
 
 Parallel Old是Parallel Scavenge收集器的老年代版本，支持多线程并发收集，基于标记-整理算法实现。
 
 Parallel/Parallel Old 收集器运行示意图: 注*这是jdk1.8默认收集器组合!
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/8.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/8.jpg)
 
 #### 3.5.6 CMS收集器
 
@@ -418,7 +418,7 @@ CMS（Concurrent Mark Sweep）收集器是一种以获取最短回收停顿时�
 初始标记、重新标记这两个步骤仍然需要“Stop The World”。初始标记仅仅只是标记一下GC Roots能直接关联到的对象，速度很快；并发标记阶段就是从GC Roots的直接关联对象开始遍历整个对象图的过程，这个过程耗时较长但是不需要停顿用户线程，可以与垃圾收集线程一起并发运行；而重新标记阶段则是为了修正并发标记期间，因用户程序继续运作而导致标记产生变动的那一部分对象的标记记录（详见3.4.6节中关于增量更新的讲解），这个阶段的停顿时间通常会比初始标记阶段稍长一些，但也远比并发标记阶段的时间短；最后是并发清除阶段，清理删除掉标记阶段判断的已经死亡的对象，由于不需要移动存活对象，所以这个阶段也是可以与用户线程同时并发的。  
 
 Concurrent Mark Sweep 收集器运行示意图:
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/9.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/9.jpg)
 
 #### 3.5.7 Garbage First收集器
 
@@ -431,7 +431,7 @@ Region中还有一类特殊的Humongous区域，专门用来存储大对象。�
 G1收集器去跟踪各个Region里面的垃圾堆积的“价值”大小，根据用户设定允许的收集停顿时间（使用参数`-XX：MaxGCPauseMillis`指定，默认值是200毫秒），优先处理回收价值收益最大的那些Region。  
 
 G1收集器Region分区示意图：
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/10.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/10.jpg)
 
 解决跨Region引用：每个Region都维护有自己的记忆集，G1的记忆集在存储结构的本质上是一种哈希表，Key是别的Region的起始地址，Value是一个集合，里面存储的元素是卡表的索引号。通过原始快照（SATB）算法来实现收集线程与用户线程互不干扰。  
 
@@ -442,7 +442,7 @@ G1收集器Region分区示意图：
 4. 筛选回收（Live Data Counting and Evacuation）：根据用户所期望的停顿时间来制定回收计划。必须暂停用户线程，由多条收集器线程并行完成的。  
 
 G1收集器运行示意图：
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/11.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/11.jpg)
 
 `-XX：MaxGCPauseMillis`：允许的收集停顿时间，默认值是200毫秒。
 
@@ -452,7 +452,7 @@ G1收集器运行示意图：
 
 下图，中浅色阶段表示必须挂起用户线程，深色表示收集器线程与用户线程是并发工作的。
 
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/12.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/12.jpg)
 
 可见，在CMS和G1之前的全部收集器，其工作的所有步骤都会产生“Stop TheWorld”式的停顿；CMS和G1分别使用增量更新和原始快照（见3.4.6节）技术，实现了标记阶段的并发，不会因管理的堆内存变大，要标记的对象变多而导致停顿时间随之增长。但是对于标记阶段之后的处理，仍未得到妥善解决。CMS使用标记-清除算法，虽然避免了整理阶段收集器带来的停顿，但是清除算法不论如何优化改进，在设计原理上避免不了空间碎片的产生，随着空间碎片不断淤积最终依然逃不过“Stop The World”的命运。G1虽然可以按更小的粒度进行回收，从而抑制整理阶段出现时间过长的停顿，但毕竟也还是要暂停的。  
 最后的两款收集器，Shenandoah和ZGC，几乎整个工作过程全部都是并发的，只有初始标记、最终标记这些阶段有短暂的停顿，这部分停顿的时间基本上是固定的，与堆的容量、堆中对象的数量没有正比例关系。被官方命名为“低延迟垃圾收集器”（Low-Latency Garbage Collector或者Low-Pause-Time GarbageCollector）。
@@ -477,7 +477,7 @@ Shenandoah收集器的工作过程大致可以划分为以下九个阶段：
 9. 并发清理（Concurrent Cleanup）：经过并发回收和引用更新之后，整个回收集中所有的Region已再无存活对象，这些Region都变成Immediate Garbage Regions了，最后再调用一次并发清理过程来回收这些Region的内存空间，供以后新对象分配使用。  
 
 Shenandoah收集器的工作过程图
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/13.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/13.png)
 
 Shenandoah用以支持并行整理的核心概念——Brooks Pointer：转发指针  
 在原有对象布局结构的最前面统一增加一个新的引用字段，在正常不处于并发移动的情况下，该引用指向对象自己。与句柄定位有一些相似之处，柄通常会统一存储在专门的句柄池中，而转发指针是分散存放在每一个对象头前面。  
@@ -516,11 +516,11 @@ ZGC内存布局：
 6. 查看熬过收集后剩余对象的年龄分布信息，在JDK 9前使用-XX：+PrintTenuring-Distribution，JDK 9之后使用-Xlog：gc+age=trace：
 
 下图给出了全部在JDK 9中被废弃的日志相关参数及它们在JDK9后使用-Xlog的代替配置形式。
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/14.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/14.png)
 
 #### 3.7.4 垃圾收集器参数总结
 
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/15.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/15.png)
 
 ### 3.8 实战：内存分配与回收策略
 
@@ -660,7 +660,7 @@ Class文件格式采用一种类似于C语言结构体的伪结构来存储数�
 双亲委派模型的工作过程是：如果一个类加载器收到了类加载的请求，它首先不会自己去尝试加载这个类，而是把这个请求委派给父类加载器去完成，每一个层次的类加载器都是如此，因此所有的加载请求最终都应该传送到最顶层的启动类加载器中，只有当父加载器反馈自己无法完成这个加载请求（它的搜索范围中没有找到所需的类）时，子加载器才会尝试自己去完成加载。
 
 双亲委派模型图
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/16.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/16.jpg)
 
 #### 7.4.3 破坏双亲委派模型
 
@@ -717,11 +717,11 @@ JDK 9提出了与“类路径”（ClassPath）相对应的“模块路径”（
 4. 平台及应用程序类加载器收到类加载请求，要先判断该类是否能够归属到某一个系统模块中，如果可以找到这样的归属关系，就要优先委派给负责那个模块的加载器完成加载。双亲委派的第四次破坏。
 
 启动类加载器负责加载的模块：(图)
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/17.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/17.jpg)
 平台类加载器负责加载的模块：(图)
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/18.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/18.jpg)
 应用程序类加载器负责加载的模块：(图)
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/19.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/19.jpg)
 
 ### 7.6 本章小结
 
@@ -893,7 +893,7 @@ Java虚拟机的执行引擎在执行Java代码的时候都有解释执行（通
 4. 放置在/WebApp/WEB-INF目录中。类库仅仅可以被该Web应用程序使用，对Tomcat和其他Web应用程序都不可见。  
 
 Tomcat自定义了多个类加载器，对目录里面的类库进行加载和隔离。如图
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/20.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/20.png)
 
 那么被Common类加载器或Shared类加载器加载的Spring如何访问并不在其加载范围内的用户程序呢？  
 答：Spring是被线程上下文加载器加载的，而线程上下文加载器默认为WebAppClassLoader加载器。即每个WebApp都会加载自己用到的Spring相关的类。
@@ -1228,7 +1228,7 @@ Java语言定义了6种线程状态：
 6. 结束（Terminated）：已终止线程的线程状态，线程已经结束执行。  
 
 上述6种状态在遇到特定事件发生的时候将会互相转换，它们的转换关系如图。
-![image](https://https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/21.png)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/21.png)
 
 ### 12.3 Java与协程
 
@@ -1341,5 +1341,13 @@ StringBuffer是线程安全的，但经过逃逸分析后会发现它的动态�
 
 #### 13.3.4 轻量级锁
 
-| 锁状态 |                mark world (64bit)               |  
-|       | 未使用:25 | 哈希值:31 | 未使用:1 | 分代年龄:4 | 偏向模式:1 | 
+| 锁状态 | 25bit | 31bit | 1bit | 4bit | 1bit 偏向锁位 | 2bit 锁标志位 |
+| 无锁 | unused | hashcode(如果有调用) | unused | 分代年龄 | 0 | 01 |
+
+| 锁状态 | 54bit | 2bit | 1bit | 4bit | 1bit 偏向锁位 | 2bit 锁标志位 | 
+| 偏向锁 | 当前线程指针 JavaThread* | Epoch | unused | 分代年龄 | 1 | 01 |
+
+| 锁状态 | 62bit | 2bit 锁标志位 |
+| 轻量级锁 | 指向线程栈中Lock Record的指针 | 00 |
+| 重量级锁 | 指向互斥量(重量级锁)的指针 | 10 |
+| GC标记 | CMS过程用到的标记信息 | 11 | 
