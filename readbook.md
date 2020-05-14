@@ -340,7 +340,7 @@ HotSpot虚拟机里是通过写屏障（Write Barrier）技术维护卡表状态
 2. 原本存活的对象错误标记为已消亡。非常致命。
 
 例图：
-![image]https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/4.jpg)
+![image](https://github.com/zuofengnihao/Stu_JVM/blob/master/image/readbook/4.jpg)
 
 Wilson于1994年在理论上证明了，当且仅当以下两个条件同时满足时，会产生“对象消失”的问题(2问题)，即原本应该是黑色的对象被误标为白色：
 * 赋值器插入了一条或多条从黑色对象到白色对象的新引用。
